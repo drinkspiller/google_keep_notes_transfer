@@ -47,7 +47,7 @@ Messages = {
   'LOGIN_FAILURE_TEMPLATE': (Fore.RED + 'An exception occurred while ' +
     'logging in: {exception}' + Style.RESET_ALL),
   'START': Fore.LIGHTGREEN_EX + 'Processing notes...' + Style.RESET_ALL,
-  'SYNC': Fore.LIGHTGREEN_EX + 'syncing notes to {account}' + Style.RESET_ALL,
+  'SYNC': Fore.LIGHTGREEN_EX + 'Syncing notes to {0}' + Style.RESET_ALL,
   'SYNC_FAILURE_TEMPLATE': (Fore.RED + 'sAn exception occurred while ' +
     'syncing: {exception}' + Style.RESET_ALL),
 }
@@ -149,10 +149,9 @@ for note_json_file in note_json_files:
 
 # Sync all notes.
 try:
-  print(Messages['SYNC'])
+  print(Messages['SYNC'].format(login))
   keep.sync()
 except SyncException:
   print(Messages['SYNC_FAILURE_TEMPLATE'].format(exception.args[0]))
 
 print(Messages['COMPLETE'])
-
