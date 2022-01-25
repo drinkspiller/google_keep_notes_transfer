@@ -1,4 +1,3 @@
-from email.message import Message
 import colorama
 from colorama import Fore, Style
 import getpass
@@ -7,7 +6,7 @@ from gkeepapi.exception import LoginException, SyncException
 from gkeepapi.node import ColorValue
 import glob
 import json
-from PyInquirer import prompt, print_json, style_from_dict
+from PyInquirer import prompt, style_from_dict
 from prompt_toolkit.token import Token
 
 colorama.init()
