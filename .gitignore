@@ -1,1 +1,3 @@
 Takeout*
+*.zip
+__pycache__/
